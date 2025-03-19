@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/Resistor_color.png">
+    <HelloWorld msg="Resistor Color" :number="number" @update-number="updateNumber"/>
   </div>
 </template>
 
@@ -12,6 +12,16 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data(){
+    return{
+      number: 0
+    }
+  },
+  methods: {
+    updateNumber(newNumber) {
+      this.number = newNumber;
+    }
   }
 }
 </script>
