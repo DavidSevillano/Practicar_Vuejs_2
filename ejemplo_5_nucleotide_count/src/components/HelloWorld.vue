@@ -6,8 +6,8 @@
       <input type="submit" name="submit">
     </form>
     <ul>
-      <li v-for="(count, nucleotide) in nucleotide" :key="nucleotide">
-        {{ nucleotide }}: {{ count }}
+      <li v-for="(value, nucleotide) in nucleotides" :key="nucleotide">
+        {{ nucleotide }}: {{ value }}
       </li>
     </ul>
   </div>
@@ -19,7 +19,7 @@ export default {
   data(){
     return{
       word: '',
-      nucleotide: []
+      nucleotides: []
     }
   },
   props: {
@@ -36,7 +36,7 @@ export default {
       });
       const data = await response.json();
 
-      this.nucleotide = data;
+      this.nucleotides = data;
 
     } catch (er) {
       console.error('Error en la solicitud:', er);
